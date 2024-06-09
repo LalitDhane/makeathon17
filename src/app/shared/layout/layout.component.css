@@ -32,3 +32,16 @@ h1.example-app-name {
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
 }
+
+/*Set sidenav width*/
+
+mat-sidenav {
+  min-width: 180px !important;
+  border-right: 1px solid #eee;
+  box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
+  /* background-color:rgb(63, 81, 181); */
+}
+
+a.mat-list-item.active {
+  background: rgba(0, 0, 0, 0.04);
+}

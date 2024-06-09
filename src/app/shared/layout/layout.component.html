@@ -9,15 +9,25 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="spacing">App Name</span>
-    <div [matMenuTriggerFor]="accountMenu">
-      <button mat-icon-button class="example-icon">
-        <mat-icon>account_circle</mat-icon>
-      </button>
+    <button mat-button [matMenuTriggerFor]="accountMenu">
+      <mat-icon>person</mat-icon>
       <span>{{ userName }}</span>
-    </div>
-    <mat-menu #accountMenu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
+    </button>
+    <mat-menu
+      #accountMenu="matMenu"
+      xPosition="before"
+      yPosition="above"
+      [overlapTrigger]="false"
+    >
+      <a mat-menu-item [routerLink]="['/account/profile']">
+        <mat-icon>person</mat-icon>
+        <span>Account</span>
+      </a>
+
+      <a mat-menu-item [routerLink]="['/auth/login']">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Log out</span>
+      </a>
     </mat-menu>
   </mat-toolbar>
   <mat-sidenav-container
@@ -27,16 +37,44 @@
     <mat-sidenav
       #snav
       [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [opened]="!mobileQuery.matches"
       [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56"
     >
       <mat-nav-list>
-        <a href="#" mat-list-item><p mat-line>Menu Item 2</p></a>
-        <a href="#" mat-list-item><p mat-line>Menu Item 3</p></a>
-        <a href="#" mat-list-item><p mat-line>Menu Item 1</p></a>
-        <a href="#" mat-list-item><p mat-line>Menu Item 4</p></a>
-        <a href="#" mat-list-item><p mat-line>Menu Item 5</p></a>
-        <a href="#" mat-list-item><p mat-line>Menu Item 6</p></a>
+        <h3 mat-subheader>Home</h3>
+
+        <a
+          mat-list-item
+          [routerLink]="['/dashboard']"
+          routerLinkActive="active"
+        >
+          <mat-icon mat-list-icon> dashboard </mat-icon>
+          <p mat-line>Dashboard</p>
+        </a>
+
+        <a
+          mat-list-item
+          [routerLink]="['/customers']"
+          routerLinkActive="active"
+        >
+          <mat-icon mat-list-icon> business </mat-icon>
+          <p mat-line>Customers</p>
+        </a>
+        <a mat-list-item [routerLink]="['/users']" routerLinkActive="active">
+          <mat-icon mat-list-icon> people </mat-icon>
+          <p mat-line>Users</p>
+        </a>
+
+        <a mat-list-item [routerLink]="['/account/profile']">
+          <mat-icon mat-list-icon>person</mat-icon>
+          <p mat-line>Account</p>
+        </a>
+
+        <a mat-list-item [routerLink]="['/auth/login']">
+          <mat-icon mat-list-icon>exit_to_app</mat-icon>
+          <p mat-line>Log out</p>
+        </a>
       </mat-nav-list>
     </mat-sidenav>
 

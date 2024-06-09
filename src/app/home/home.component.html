@@ -5,29 +5,3 @@
     <input type="search" matInput />
   </mat-form-field>
 </form>
-
-<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
-  <div
-    [fxFlex]="100 / 5 + '%'"
-    fxFlex.xs="100%"
-    fxFlex.sm="33%"
-    *ngFor="let num of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-  >
-    <mat-card class="mat-elevation-z4">
-      <mat-card-header>
-        <mat-card-title>Product {{ num }}</mat-card-title>
-      </mat-card-header>
-      <img
-        mat-card-image
-        src="https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg"
-      />
-      <mat-card-content>
-        <p>Some text content</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-</div>
