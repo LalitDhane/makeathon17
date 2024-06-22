@@ -12,12 +12,14 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatButtonModule } from "@angular/material/button";
+import { AuthModule } from "./features/Auth/auth.module";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     SharedModule,
+    AuthModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,

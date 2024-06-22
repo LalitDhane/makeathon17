@@ -1,0 +1,21 @@
+.formLayout {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  justify-content: space-evenly;
+}
+.login-card {
+}
+
+.formDimentions {
+  height: inherit;
+}
+
+.center {
+  width: 30%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
